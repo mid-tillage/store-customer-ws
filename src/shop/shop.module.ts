@@ -9,18 +9,26 @@ import { CarouselService } from './services/carousel/carousel.service';
 import { CategoriesService } from './services/categories/categories.service';
 import { FrontPageService } from './services/front-page/front-page.service';
 import { ProductService } from './services/product/product.service';
+import { ProductOnSale, ProductOnSaleSchema } from './product-on-sale/product-on-sale';
+import { ProductOnSaleController } from './product-on-sale/product-on-sale.controller';
+import { ProductOnSaleService } from './product-on-sale/product-on-sale.service';
 
 @Module({
-    imports: [MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }])],
+    imports: [MongooseModule.forFeature([
+        { name: Product.name, schema: ProductSchema },
+        { name: ProductOnSale.name, schema: ProductOnSaleSchema }
+    ])],
     controllers: [
         CarouselController,
         CategoriesController,
         FrontPageController,
-        ProductController],
+        ProductController,
+        ProductOnSaleController],
     providers: [
-        CarouselService, 
-        CategoriesService, 
+        CarouselService,
+        CategoriesService,
         FrontPageService,
-        ProductService]
+        ProductService,
+        ProductOnSaleService]
 })
 export class ShopModule { }
