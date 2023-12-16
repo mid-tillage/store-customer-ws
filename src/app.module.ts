@@ -19,15 +19,6 @@ import database from './config/database.config';
         uri: config.get<string>('MONGODB_CONNECTION_STRING')
       })
     }),
-    // MongooseModule.forRoot('mongodb://127.0.0.1:27017/nest', {
-    //   connectionName: 'nest',
-    // }),
-    // MongooseModule.forRoot('mongodb://127.0.0.1:27017/test', {
-    //   connectionName: 'test',
-    // }),
-    // MongooseModule.forRoot('mongodb://127.0.0.1:27017/users', {
-    //   connectionName: 'users',
-    // }),
     CustomerModule,
     ShopModule,
     ShoppingCartModule

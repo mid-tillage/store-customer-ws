@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: store-customer-ws-pod
+  labels:
+    app: store-customer-ws
+spec:
+  containers:
+  - name: store-customer-ws-container
+    image: store-customer-ws:latest
+    imagePullPolicy: IfNotPresent
+    ports:
+    - containerPort: 3020
+    env:
+    - name: NODE_ENV
+      value: "production"
+    - name: MONGODB_CONNECTION_STRING
+      value: "mongodb://host.docker.internal:27017/mydb"

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-customer-ws-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: store-customer-ws
+  template:
+    metadata:
+      labels:
+        app: store-customer-ws
+    spec:
+      containers:
+        - name: store-customer-ws-container
+          image: store-customer-ws:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3020
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: MONGODB_CONNECTION_STRING
+              value: "mongodb://host.docker.internal:27017/mydb"
