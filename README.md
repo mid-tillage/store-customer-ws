@@ -12,7 +12,7 @@
 
 ## Description
 
-Customer example Web Service using [Nest](https://github.com/nestjs/nest) framework.
+Store's Customer Web Service example using [Nest](https://github.com/nestjs/nest) framework.
 
 ## Installation
 
@@ -59,7 +59,7 @@ docker run -p 3020:3020 -p 27017:27017 -e NODE_ENV=production -e MONGODB_CONNECT
 
 ### Image resource usage metrics
 
-The table below shows resource usage metrics for the store-customer-ws Docker container.
+The table below shows resource usage metrics for the `store-customer-ws` Docker container.
 
 | REPOSITORY           | TAG    | IMAGE ID      | CREATED      | SIZE  |
 |----------------------|--------|---------------|--------------|-------|
