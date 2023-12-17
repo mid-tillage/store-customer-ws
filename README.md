@@ -72,6 +72,9 @@ The table below shows resource usage metrics for the `store-customer-ws` Docker 
 # Start Minikube to create a local Kubernetes cluster
 minikube start
 
+# Configure the shell to use Minikube's Docker daemon
+& minikube -p minikube docker-env --shell powershell | Invoke-Expression
+
 # Build Docker image with a specific tag and Dockerfile
 docker build -t store-customer-ws:latest -f Dockerfile .
 
